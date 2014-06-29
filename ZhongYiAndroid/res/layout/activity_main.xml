@@ -2,15 +2,74 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity" >
+    android:background="@color/app_bg" >
 
-    <TextView
-        android:layout_width="wrap_content"
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rgTabs"
+        android:orientation="vertical" >
+
+        <FrameLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+        </FrameLayout>
+
+       <!--  <ImageView
+            android:id="@+id/imgShadow"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_gravity="top"
+            android:background="@drawable/tab_bottom_shadow" />--> 
+    </FrameLayout>
+
+    <com.zy.zhongyiandroid.ui.widget.MyRadioGroup
+        android:id="@+id/rgTabs"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/tab_bg"
+        android:orientation="horizontal" >
 
+        <RadioButton
+            android:id="@+id/rboHome"
+            style="@style/tab_style"
+            android:layout_weight="1"
+            android:checked="true"
+            
+            android:drawableTop="@drawable/tab_home_selector"
+       
+            android:text="@string/tab_home" />
+
+        <RadioButton
+            android:id="@+id/rboEarlyEducation"
+            style="@style/tab_style"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/tab_early_selector"
+          
+            android:text="@string/tab_early_education" />
+
+        <RadioButton
+            android:id="@+id/rboInformation"
+            style="@style/tab_style"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/tab_info_selector"
+       
+            android:text="@string/tab_information" />
+        
+
+		<RadioButton 
+            android:id="@+id/rboBaby"
+			style="@style/tab_style"
+           	android:layout_weight="1"
+            android:drawableTop="@drawable/tab_baby_selector"
+      
+            android:text="@string/tab_baby" />
+        
+    </com.zy.zhongyiandroid.ui.widget.MyRadioGroup>
+	
 </RelativeLayout>
